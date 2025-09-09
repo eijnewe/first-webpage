@@ -5,124 +5,102 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Jättefint formulär</title>
         <script defer src="main.js"></script>
-
-        <style>
-            body {
-                font-family: Helvetica, Arial, sans-serif;
-                background-color: #cdd8ee;
-                padding: 2rem;
-            }
-            form {
-                font-size: 1rem;
-                background-color: #ffffff;
-                padding: 20px;
-                border: 1px solid black;
-                border-radius: 10px;
-            }
-
-            input {
-                font-size: 1rem;
-                display: flex;
-                flex-wrap: wrap;
-            }
-            fieldset {
-                margin-bottom: 1rem;
-                padding: 10px;
-            }
-            h2 {
-                text-align: center;
-            }
-            button {
-                padding: 0.3rem 1rem;
-                display: block;
-                margin: 0 auto; /* centrerar horisontellt */
-            }
-            button:hover {
-                background-color: #e3e3e3;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <form id="basicForm">
+       <header>
+            <h1>GitGood</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/form.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+          <form id="basicForm">
             <h2>Contact information</h2>
             <fieldset>
-                <legend>Name</legend>
-                <label for="fname"
-                    >First Name
+              <legend>Name</legend>
+              <label for="fname"
+              >First Name:
 
-                    <input
-                        type="text"
-                        name="firstname"
-                        id="fname"
-                        placeholder="Enter your first name"
-                        value="Jane"
-                        required
-                    />
-                </label>
+              <input
+              type="text"
+              name="firstname"
+              id="fname"
+              placeholder="Enter your first name"
+              value="Jane"
+              required
+              />
+            </label>
 
-                <label for="lname"
-                    >Last Name
+            <label for="lname"
+            >Last Name:
 
-                    <input
-                        type="text"
-                        name="lastname"
-                        id="lname"
-                        placeholder="Enter your last name"
-                        value="Doe"
-                        required
-                    />
-                </label>
-            </fieldset>
-            <fieldset>
-                <legend>E-mail</legend>
-                <div class="form-row">
-                    <label for="email">E-mail</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your e-mail"
-                        value="Jane@email.com"
-                        required
-                    />
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Age</legend>
+            <input
+            type="text"
+            name="lastname"
+            id="lname"
+            placeholder="Enter your last name"
+            value="Doe"
+            required
+            />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>E-mail: </legend>
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your e-mail"
+            value="Jane@email.com"
+            required
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Age: </legend>
 
-                <div>
-                    <label for="age">Your age</label>
-                    <input
-                        type="range"
-                        id="amount"
-                        name="age"
-                        min="18"
-                        max="100"
-                        value="18"
-                    />
-                    <output id="result" for="amount" name="result">18</output>
-                </div>
-            </fieldset>
+          <div>
+            <label for="age">Your age: </label>
+            <input
+            type="range"
+            id="amount"
+            name="age"
+            min="18"
+            max="100"
+            value="18"
+            />
+            <output id="result" for="amount" name="result">18</output>
+          </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>Favorite day</legend>
-                <div class="form-row">
-                    <label for="favoriteDay"
-                        >What day is it?
-                        <select id="favoriteDay" name="favoriteDay" required>
-                            <option value="monday" selected>Monday</option>
-                            <option value="tuesday">Tuesday</option>
-                            <option value="wednesday">Wednesday</option>
-                            <option value="thursday">Thursday</option>
-                            <option value="friday">Friday</option>
-                            <option value="saturday">Saturday</option>
-                            <option value="sunday">Sunday</option>
-                        </select>
-                    </label>
-                </div>
-            </fieldset>
-
-            <button type="submit">Skicka</button>
-        </form>
+        <fieldset>
+          <legend>Day</legend>
+          <div class="form-row">
+            <label for="favoriteDay"
+            >What day is it?
+            <select id="favoriteDay" name="favoriteDay" required>
+              <option value="monday" selected>Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+          </label>
+        </div>
+      </fieldset><!--  -->
+      <button type="submit">Skicka</button>
+    </form>
+  </main>
+    <footer>
+      <p>Copyright © Git Good</p>
+        </footer>
     </body>
 </html>

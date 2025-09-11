@@ -122,22 +122,22 @@ footer {
 }
 
 form {
-    padding: 20px;
-}
-
-form {
+    padding: 2rem;
     font-size: 1rem;
     background-color: #ffffff;
     padding: 20px;
     border: 1px solid black;
-    border-radius: 10px;
-    width: 500px;
+    border-radius: 12px;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
     margin: 2em auto;
 }
 
 input {
     font-size: 1rem;
-  }
+}
 
 fieldset {
     margin-bottom: 1rem;

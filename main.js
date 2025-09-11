@@ -17,3 +17,4 @@ form.addEventListener("input", () => {
     result.value = amount.value;
   }
 });
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😡</text></svg>"
+        />
+        <title>Sökbar</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+     <header>
+            <h1>GitGood</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/form.html">Contact</a></li>
+                    <li><a href="/search.html">Search</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form id="basicForm">
+                <h2>Find a cloud</h2>
+
+                <fieldset>
+
+                    <div class="form-row">
+            <label for="favoriteDay"
+            >Välj:
+            <select id="selectInput" name="favoriteDay" required>
+              <option value="low" selected>Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="veryHigh">Very high</option>
+            </select>
+          </label>
+          <div>
+
+            <h3>
+              Sökresultat
+            </h3>
+            <ul id="searchResults">
+            </ul>
+          </div>
+        </div>
+
+                </fieldset>
+
+
+                <fieldset>
+                  <h2>or a country</h2>
+
+                    <div class="form-row">
+            <label for="favoriteDay"
+            >Välj:
+            <select id="selectInput2" name="favoriteDay" required>
+              <option value="europe" selected>Europe</option>
+              <option value="southAmerica">Sydamerika</option>
+              <option value="asia">Asia</option>
+              <option value="africa">Afrika</option>
+            </select>
+          </label>
+          <div>
+
+            <h3>
+              Sökresultat
+            </h3>
+            <ul id="searchResults2">
+            </ul>
+          </div>
+        </div>
+
+
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <p>Copyright © Git Good</p>
+        </footer>
+        <script src="main2.js" async></script>
+    </body>
+</html>

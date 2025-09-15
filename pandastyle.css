@@ -1,0 +1,125 @@
+:root {
+    --dark-red: #fe8080;
+    --gradient-from: #fff3f3;
+    --gradient-to: #ffebeb;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+.google-sans-code {
+    font-family: 'Google Sans Code', monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Google Sans Code', monospace;
+}
+
+img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    flex-basis: 250px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+body {
+    background: linear-gradient(
+        to right,
+        var(--gradient-from),
+        var(--gradient-to)
+    );
+}
+
+p {
+    margin: 0;
+    font-size: 13px;
+}
+
+h2 {
+    color: var(--dark-red);
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h3 {
+    display: inline-block;
+    background-color: var(--dark-red);
+    color: white;
+    border-radius: 5px;
+    padding: 0.2em 0.6em;
+    font-size: 18px;
+}
+
+.card-content {
+    color: grey;
+    flex-grow: 2;
+}
+
+p:last-of-type {
+    color: black;
+    text-align: right;
+    font-size: x-small;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.container > div {
+    box-sizing: border-box;
+    width: 250px;
+}
+
+[class^='card-container'] {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.card-content > p {
+    margin-bottom: 15px;
+}
+
+.card-content p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:hover img {
+    opacity: 65%;
+}

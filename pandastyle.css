@@ -123,3 +123,15 @@ p:last-of-type {
 .card:hover img {
     opacity: 65%;
 }
+/*
+@media (width <= 680px) {
+    .container {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 1em;
+    }
+}
+ */

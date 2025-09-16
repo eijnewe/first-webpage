@@ -19,11 +19,39 @@ html {
 
 img {
     max-width: 100%;
-    max-height: 250px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
+    background-color: rgb(234, 228, 228);
+    position: relative;
+    font-weight: 700;
+}
+
+img::after {
+    box-sizing: border-box;
+    content: 'Image missing :/';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+.picture {
+    max-width: 100%;
+    max-height: 250px;
+    position: relative;
     flex-basis: 250px;
     flex-shrink: 1;
     flex-grow: 1;
+}
+
+ h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    margin: .5rem;
 }
 
 body {

@@ -106,8 +106,9 @@ p:last-of-type {
     background-color: white;
     border-radius: 0.5em;
     box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 1em;
     box-sizing: border-box;
+    gap: 1em;
 }
 
 .card {
@@ -136,12 +137,18 @@ p:last-of-type {
     align-items: center;
 }
 
-.card-content > p {
+/* .card-content > p {
     margin-bottom: 15px;
 }
 
 .card-content p:last-of-type {
     margin-bottom: 0;
+} */
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .card:hover {

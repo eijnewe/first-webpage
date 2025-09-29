@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const extraText = document.querySelector(".extra-text");
 
   toggleBtn.addEventListener("click", function () {
-    console.log("hej");
+    console.log("hejjj");
     const isVisible = extraText.style.display === "block";
 
     console.log("isVisible", isVisible);

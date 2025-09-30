@@ -107,7 +107,6 @@ button:hover {
     background-color: var(--orange);
 }
 
-
 section {
     display: flex;
     flex-direction: column;

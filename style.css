@@ -1,32 +1,54 @@
 :root {
-    --background-color: #a9def9;
+    --background-color: #a9def9; /* Adjusted slightly if needed */
     --secondary-color: #e4c1f9;
-    --text-color: #000;
-    --green: #d0f4de;
-    --orange: #fcd5a8;
-    --pink: #ff99c8;
-    --yellow: #fcf6bd;
+
+    --text-color: #333333; /* Universal text color for light mode */
+    --hover-text-color: #000000;
+
+    --green: #b8eacb; /* Lightened for better contrast with #333 */
+    --orange: #f3cfa1;
+    --pink: #ffb3d1; /* Slightly lighter and more pastel */
+    --yellow: #f9f0a1; /* Deeper yellow for better contrast */
+    --light-purple: #ebd4f4; /* Slightly darker than original */
+    --placeholder-color: #666666;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
 }
 
 [data-theme='light'] {
-    --background-color: #a9def9;
+    --background-color: #a9def9; /* Adjusted slightly if needed */
     --secondary-color: #e4c1f9;
-    --text-color: #000;
-    --green: #d0f4de;
-    --orange: #fcd5a8;
-    --pink: #ff99c8;
-    --yellow: #fcf6bd;
+
+    --text-color: #333333; /* Universal text color for light mode */
+    --hover-text-color: #000000;
+
+    --green: #b8eacb; /* Lightened for better contrast with #333 */
+    --orange: #f3cfa1;
+    --pink: #ffb3d1; /* Slightly lighter and more pastel */
+    --yellow: #f9f0a1; /* Deeper yellow for better contrast */
+    --light-purple: #ebd4f4; /* Slightly darker than original */
+    --placeholder-color: #666666;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
 }
 
 [data-theme='dark'] {
-    --background-color: #2b2b2c; /* djup mörk bas */
-    --secondary-color: #1d1d1d; /* lite mjukare kontrast */
-    --text-color: #ffffff; /* nästan vit text */
-    --green: #3d4248; /* mjuk grön accent */
-    --orange: #3d4248; /* varm orange för detaljer */
-    --pink: #3d4248; /* dov rosa som poppar */
-    --yellow: #3d4248;
+    --background-color: #1e1e2f;
+    --secondary-color: #2e2e45;
+
+    --text-color: #dddddd; /* Universal text color for dark mode */
+    --hover-text-color: #ffffff;
+
+    --green: #2e5d49; /* Richer mint */
+    --orange: #a66a2e;
+    --pink: #8e3a65; /* Deep raspberry */
+    --yellow: #7a6604; /* Golden ochre */
+    --light-purple: #5a3b6d; /* Form/card background */
+    --input-bg: #6c4d85; /* Input field background */
+    --input-border: #8d70a1; /* Soft border */
+    --placeholder-color: #c9b6d7; /* Subtle placeholder */
 }
+
 body * {
     box-sizing: border-box;
 }
@@ -35,6 +57,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: var(--background-color);
+    display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 main {
@@ -43,6 +68,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 header {
@@ -57,13 +84,18 @@ header {
 h1 {
     margin: 0;
     margin-right: auto;
-    color: var(--text-color);
     padding: 0;
 }
 
 h2 {
     text-align: center;
     margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--hover-text-color);
 }
 
 nav {
@@ -78,6 +110,7 @@ header label,
 header input[type='checkbox'] {
     display: none;
     align-self: center;
+    color: inherit;
 }
 
 header button {
@@ -113,8 +146,10 @@ a:active {
     color: inherit;
 }
 
-a:hover {
-    color: var(--text-color);
+a:hover,
+button:hover {
+    color: var(--hover-text-color);
+    border-color: var(--orange);
 }
 
 /* button {
@@ -141,7 +176,8 @@ main button {
     border-radius: 1em;
 }
 
-section, form {
+section,
+form {
     display: flex;
     flex-direction: column;
     padding: 2em;
@@ -171,12 +207,45 @@ footer {
 
 form {
     font-size: 1rem;
-    background-color: white;
+    background-color: var(--light-purple);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    min-width: 500px;
 }
 
-input {
+form input,
+form select {
+    display: block;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+form input {
+    width: 100%;
+}
+
+form .columns {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
     font-size: inherit;
+    font-family: inherit;
+
+    border: 1px solid var(--input-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    background-color: var(--input-bg);
+
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1; /* Make sure it's fully visible */
 }
 
 fieldset {
@@ -216,7 +285,7 @@ hr {
     border-left: 1px solid currentColor;
 }
 
-@media (min-width: 680px), screen and (orientation: landscape) {
+@media (min-width: 768px), screen and (orientation: landscape) {
     main {
         padding: 3rem 1.5rem;
         gap: 1.5rem;
@@ -231,6 +300,19 @@ hr {
     }
     #mac {
         flex-direction: row-reverse;
+    }
+
+    form {
+      margin: 0 auto;
+        padding: 3rem;
+        gap: 1.5em;
+        .columns {
+           gap: 1.5em;
+            flex-direction: row;
+            > * {
+                width: 50%;
+            }
+        }
     }
 }
 
@@ -268,6 +350,10 @@ hr {
 
     nav hr:last-child {
         order: -1;
+    }
+
+    form {
+      margin: 0;
     }
 }
 

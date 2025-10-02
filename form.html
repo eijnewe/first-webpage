@@ -39,7 +39,7 @@
             <h2>Contact us</h2>
             <form id="basicForm">
                 <h3>Contact information</h3>
-                <fieldset>
+                <fieldset class="columns">
                     <label for="fname"
                         >First Name:
 
@@ -52,7 +52,6 @@
                             required
                         />
                     </label>
-
                     <label for="lname"
                         >Last Name:
 
@@ -67,8 +66,8 @@
                     </label>
                 </fieldset>
                 <fieldset>
-                    <div class="form-row">
-                        <label for="email">E-mail: </label>
+                    <label for="email"
+                        >E-mail:
                         <input
                             type="email"
                             id="email"
@@ -77,11 +76,16 @@
                             value="Jane@email.com"
                             required
                         />
-                    </div>
+                    </label>
                 </fieldset>
-                <fieldset>
-                    <div>
-                        <label for="age">Your age: </label>
+                <div class="columns">
+                    <fieldset>
+                        <div>
+                            <label for="age">Your age: </label>
+                            <output id="result" for="amount" name="result"
+                                >18</output
+                            >
+                        </div>
                         <input
                             type="range"
                             id="amount"
@@ -90,13 +94,8 @@
                             max="100"
                             value="18"
                         />
-                        <output id="result" for="amount" name="result"
-                            >18</output
-                        >
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <div class="form-row">
+                    </fieldset>
+                    <fieldset>
                         <label for="favoriteDay"
                             >What day is it?
                             <select
@@ -113,8 +112,8 @@
                                 <option value="sunday">Sunday</option>
                             </select>
                         </label>
-                    </div>
-                </fieldset>
+                    </fieldset>
+                </div>
                 <!--  -->
                 <button type="submit">Skicka</button>
             </form>

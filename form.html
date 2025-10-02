@@ -6,22 +6,39 @@
         <title>Jättefint formulär</title>
         <script defer src="main.js"></script>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
     </head>
     <body>
         <header>
             <h1>GitGood</h1>
+            <label for="menu">
+                <i class="bi bi-list"></i>
+            </label>
+            <input id="menu" type="checkbox" />
             <nav>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/form.html">Contact</a></li>
+                </ul>
+                <hr />
+                <ul>
                     <li><a href="/search.html">Search</a></li>
                     <li><a href="/panda.html">Panda</a></li>
                 </ul>
+                <hr />
             </nav>
+
+            <button type="button" id="theme" data-theme-toggle>
+                <i class="bi bi-moon-fill"></i>
+            </button>
         </header>
         <main>
+            <h2>Contact us</h2>
             <form id="basicForm">
-                <h2>Contact information</h2>
+                <h3>Contact information</h3>
                 <fieldset>
                     <label for="fname"
                         >First Name:
@@ -35,8 +52,7 @@
                             required
                         />
                     </label>
-                    <br />
-                    <br />
+
                     <label for="lname"
                         >Last Name:
 
@@ -106,5 +122,6 @@
         <footer>
             <p>Copyright © Git Good</p>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

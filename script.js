@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //
 
 const themeButton = document.querySelector('[data-theme-toggle]')
+const icon = themeButton.querySelector('i')
 
 function getCurrentTheme({ localStorageTheme, systemSettingDark }) {
     if (localStorageTheme !== null) {
@@ -60,9 +61,12 @@ themeButton.addEventListener('click', () => {
     const newTheme = currentThemeSetting === 'dark' ? 'light' : 'dark'
     document.querySelector('html').setAttribute('data-theme', newTheme)
     // update the button text
-    const newCta =
-        newTheme === 'dark' ? 'Change to light theme' : 'Change to dark theme'
-    themeButton.innerText = newCta
+    /* const newCta = newTheme === 'dark' ? 'light ☀︎☼' : 'dark ☾'
+    themeButton.innerText = newCta */
+
+    // Swap icon class
+    const iconClass = newTheme === 'dark' ? 'bi-sun-fill' : 'bi-moon-fill'
+    icon.className = `bi ${iconClass}`
 
     localStorage.setItem('theme', newTheme)
     currentThemeSetting = newTheme
@@ -78,10 +82,12 @@ let currentThemeSetting = getCurrentTheme({
 })
 
 document.querySelector('html').setAttribute('data-theme', currentThemeSetting)
-
-themeButton.innerText =
-    currentThemeSetting === 'dark'
-        ? 'Change to light theme'
-        : 'Change to dark theme'
+/*
+themeButton.innerText = currentThemeSetting === 'dark' ? 'light ☀︎☼' : 'dark ☾'
+ */
+// Set initial icon
+const initialIconClass =
+    currentThemeSetting === 'dark' ? 'bi-sun-fill' : 'bi-moon-fill'
+icon.className = `bi ${initialIconClass}`
 
 console.log('current theme setting', currentThemeSetting)

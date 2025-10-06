@@ -3,8 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jättefint formulär</title>
-        <script defer src="main.js"></script>
+        <title>GitGood - Contact</title>
+        <script defer src="form.js"></script>
+        <link
+            rel="shortcut icon"
+            href="/icon/favicon.ico"
+            type="image/x-icon"
+        />
         <link rel="stylesheet" href="style.css" />
         <link
             rel="stylesheet"
@@ -25,8 +30,8 @@
                 </ul>
                 <hr />
                 <ul>
-                    <li><a href="/search.html">Search</a></li>
-                    <li><a href="/panda.html">Panda</a></li>
+                    <li><a href="/moln.html">Moln</a></li>
+                    <li><a href="panda/panda.html">Panda</a></li>
                 </ul>
                 <hr />
             </nav>
@@ -81,7 +86,7 @@
                 <div class="columns">
                     <fieldset>
                         <div>
-                            <label for="age">Your age: </label>
+                            <label for="amount">Your age: </label>
                             <output id="result" for="amount" name="result"
                                 >18</output
                             >
@@ -103,7 +108,10 @@
                                 name="favoriteDay"
                                 required
                             >
-                                <option value="monday" selected>Monday</option>
+                                <option value="" disabled selected hidden>
+                                    -- Select a day --
+                                </option>
+                                <option value="monday">Monday</option>
                                 <option value="tuesday">Tuesday</option>
                                 <option value="wednesday">Wednesday</option>
                                 <option value="thursday">Thursday</option>

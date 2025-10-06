@@ -1,56 +1,72 @@
+/* =========================================
+FÄRGER / VARIABLER
+========================================= */
+
+/* Variabler används för att enkelt kunna byta tema (light/dark mode) och hålla konsekvent färgsättning */
+
 :root {
-    --background-color: #a9def9; /* Adjusted slightly if needed */
+    /* basfärger */
+    --background-color: #a9def9;
     --secondary-color: #e4c1f9;
-
-    --text-color: #333333; /* Universal text color for light mode */
+    --text-color: #333333;
     --hover-text-color: #000000;
-
-    --green: #b8eacb; /* Lightened for better contrast with #333 */
+    /* accentfärger */
+    --green: #b8eacb;
     --orange: #f3cfa1;
-    --pink: #ffb3d1; /* Slightly lighter and more pastel */
-    --yellow: #f9f0a1; /* Deeper yellow for better contrast */
-    --light-purple: #ebd4f4; /* Slightly darker than original */
+    --pink: #ffb3d1;
+    --yellow: #f9f0a1;
+    --light-purple: #ebd4f4;
+    /* detaljer */
     --placeholder-color: #666666;
     --input-bg: #ffffff;
     --input-border: #cccccc;
 }
 
+/* light mode */
 [data-theme='light'] {
-    --background-color: #a9def9; /* Adjusted slightly if needed */
+    --background-color: #a9def9;
     --secondary-color: #e4c1f9;
 
-    --text-color: #333333; /* Universal text color for light mode */
+    --text-color: #333333;
     --hover-text-color: #000000;
 
-    --green: #b8eacb; /* Lightened for better contrast with #333 */
+    --green: #b8eacb;
     --orange: #f3cfa1;
-    --pink: #ffb3d1; /* Slightly lighter and more pastel */
-    --yellow: #f9f0a1; /* Deeper yellow for better contrast */
-    --light-purple: #ebd4f4; /* Slightly darker than original */
+    --pink: #ffb3d1;
+    --yellow: #f9f0a1;
+    --light-purple: #ebd4f4;
     --placeholder-color: #666666;
     --input-bg: #ffffff;
     --input-border: #cccccc;
 }
 
+/* dark mode */
 [data-theme='dark'] {
     --background-color: #1e1e2f;
     --secondary-color: #2e2e45;
 
-    --text-color: #dddddd; /* Universal text color for dark mode */
+    --text-color: #dddddd;
     --hover-text-color: #ffffff;
 
-    --green: #2e5d49; /* Richer mint */
+    --green: #2e5d49;
     --orange: #a66a2e;
-    --pink: #8e3a65; /* Deep raspberry */
-    --yellow: #7a6604; /* Golden ochre */
-    --light-purple: #5a3b6d; /* Form/card background */
-    --input-bg: #6c4d85; /* Input field background */
-    --input-border: #8d70a1; /* Soft border */
-    --placeholder-color: #c9b6d7; /* Subtle placeholder */
+    --pink: #8e3a65;
+    --yellow: #7a6604;
+    --light-purple: #5a3b6d;
+    --input-bg: #6c4d85;
+    --input-border: #8d70a1;
+    --placeholder-color: #c9b6d7;
 }
+
+/* =========================================
+GRUNDLÄGGANDE INSTÄLLNINGAR
+========================================= */
+
+/* Flex används för att centrera innehåll och skapa jämna mellanrum mellan sektioner */
 
 body * {
     box-sizing: border-box;
+    transition: background-color 0.3s;
 }
 
 body {
@@ -58,8 +74,8 @@ body {
     margin: 0;
     background-color: var(--background-color);
     display: flex;
-  flex-direction: column;
-  height: 100vh;
+    flex-direction: column;
+    height: 100vh;
 }
 
 main {
@@ -72,13 +88,14 @@ main {
     justify-content: center;
 }
 
-header {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    background-color: var(--secondary-color);
-    padding: 1em 2em;
-    gap: 1em;
+/* =========================================
+TYPOGRAFI
+========================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--hover-text-color);
 }
 
 h1 {
@@ -92,17 +109,22 @@ h2 {
     margin: 0;
 }
 
-h1,
-h2,
-h3 {
-    color: var(--hover-text-color);
+/* =========================================
+ HEADER & NAVIGATION
+========================================= */
+
+header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    padding: 1em 2em;
+    gap: 1em;
 }
 
 nav {
-    /*    flex-grow: 1; */
     color: var(--text-color);
     display: flex;
-
     gap: 1em;
 }
 
@@ -130,11 +152,12 @@ ul {
     align-items: center;
 }
 
+/* =========================================
+LÄNKAR
+========================================= */
+
 a {
     display: block;
-    /*   padding: 0.5em 1em;
-    border: 1px solid black;
-    border-radius: 0.5em; */
     text-align: center;
 }
 
@@ -152,19 +175,18 @@ button:hover {
     border-color: var(--orange);
 }
 
-/* button {
-    padding: 10px;
-    border-radius: 10px;
-      border: 1px solid var(--text-color);
-}
- */
+/* =========================================
+KNAPPAR
+========================================= */
 
 button {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 0;
+    transition: 0.3s;
 }
+
 button:hover {
     background-color: var(--orange);
 }
@@ -176,6 +198,10 @@ main button {
     border-radius: 1em;
 }
 
+/* =========================================
+MAIN
+========================================= */
+
 section,
 form {
     display: flex;
@@ -183,6 +209,7 @@ form {
     padding: 2em;
     gap: 1em;
     border-radius: 1em;
+    max-width: 1200px;
 }
 
 img {
@@ -195,23 +222,59 @@ img {
     align-self: flex-start;
 }
 
+.description {
+    align-self: center;
+}
+
+.rosanna {
+    background-color: var(--pink);
+    align-items: flex-start;
+}
+
+.wenjie {
+    background-color: var(--green);
+}
+
+.mac {
+    background-color: var(--yellow);
+}
+
+label .bi {
+    font-size: 1.5em;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
 footer {
     background-color: var(--background-color);
     padding: 1em;
     text-align: center;
     color: var(--text-color);
-    & p {
-        margin: 0;
-    }
 }
+
+footer p {
+    margin: 0;
+}
+
+/* =========================================
+FORMULÄR
+========================================= */
 
 form {
     font-size: 1rem;
     background-color: var(--light-purple);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    min-width: 500px;
+    max-width: 750px;
+    margin: 0;
 }
 
 form input,
@@ -234,18 +297,15 @@ input,
 select {
     font-size: inherit;
     font-family: inherit;
-
     border: 1px solid var(--input-border);
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
     background-color: var(--input-bg);
-
     color: var(--text-color);
 }
 
 input::placeholder {
     color: var(--placeholder-color);
-    opacity: 1; /* Make sure it's fully visible */
 }
 
 fieldset {
@@ -254,42 +314,18 @@ fieldset {
     padding: 0;
 }
 
-.description {
-    align-self: center;
-}
+/* =========================================
+Responsivitet
+========================================= */
 
-.Rosanna {
-    background-color: var(--pink);
-    align-items: flex-start;
-}
-
-#mac {
-    background-color: var(--yellow);
-
-    /* flex-direction: row-reverse; */
-    /*  align-items: center; */
-}
-
-#wenjie {
-    background-color: var(--green);
-}
-
-label .bi {
-    font-size: 1.5em;
-}
-
-hr {
-    margin: 0;
-    border: 0;
-    border-top: 1px solid currentColor;
-    border-left: 1px solid currentColor;
-}
-
+/* Ökad padding och gap */
 @media (min-width: 768px), screen and (orientation: landscape) {
     main {
         padding: 3rem 1.5rem;
         gap: 1.5rem;
     }
+
+    /* sektionerna visas i row istället för column */
     section {
         flex-direction: row;
         padding: 3rem;
@@ -298,46 +334,64 @@ hr {
     .description {
         padding: 2em;
     }
-    #mac {
+
+    /* bild till höger */
+    .mac {
         flex-direction: row-reverse;
     }
 
+    /* centrerar formuläret */
+    /* gör vissa av raderna till två kolumner */
     form {
-      margin: 0 auto;
+        margin: 0 auto;
         padding: 3rem;
         gap: 1.5em;
-        .columns {
-           gap: 1.5em;
-            flex-direction: row;
-            > * {
-                width: 50%;
-            }
-        }
+    }
+    form .columns {
+        gap: 1.5em;
+        flex-direction: row;
+    }
+
+    form .columns > * {
+        width: 50%;
     }
 }
 
-@media (min-width: 680px), screen and (orientation: landscape) {
+/* Ökad padding och gap */
+@media (min-width: 1025px), screen and (orientation: landscape) {
+    main {
+        padding: 4rem 2rem;
+        gap: 2rem;
+        align-items: center;
+    }
+    section {
+        padding: 4rem;
+        gap: 2em;
+    }
+    .description {
+        padding: 2.5em;
+    }
 }
 
 @media (max-width: 576px) {
-    /* Here is the magic: if the checkbox is not marked, the adjacent nav is not displayed */
+    /* om checkbox inte är icheckad så är nav dold */
     input[type='checkbox']:not(:checked) + nav {
         display: none;
     }
 
+    /* flex wrap så att nav kan hamna på en egen rad */
     header {
-        flex-direction: row;
         flex-wrap: wrap;
-        margin-left: 0;
-        margin-right: 0;
     }
 
-    /* Stlying the menu icon, the checkbox stays hidden */
+    /* visar hamburgarmenyn, order 1 så att den hamnar till höger om temaknappen */
     header label {
-        text-align: right;
         display: block;
-        order: 2;
+        order: 1;
     }
+
+    /* ändrar layout på nav till kolumn, den tar all plats på bredden och skapar en egen rad */
+    /* order 2 så den hamnar sist/längst ner istället för innan/över knapparna */
     nav {
         flex-direction: column;
         width: 100%;
@@ -347,24 +401,8 @@ hr {
     nav ul {
         flex-direction: column;
     }
-
+    /* flyttar strecket sista strecket inom nav högst upp istället */
     nav hr:last-child {
         order: -1;
     }
-
-    form {
-      margin: 0;
-    }
 }
-
-/* @media (prefers-color-scheme: dark) { */
-/* :root { */
-/* --background-color: #2b2b2c; djup mörk bas */
-/* --secondary-color: #1d1d1d; lite mjukare kontrast */
-/* --text-color: #ffffff; nästan vit text */
-/* --green: #3d4248; mjuk grön accent */
-/* --orange: #3d4248; varm orange för detaljer */
-/* --pink: #3d4248; dov rosa som poppar */
-/* --yellow: #3d4248; */
-/* } */
-/* } */
